@@ -19,7 +19,7 @@ contract MedicalChain {
     // Modifier to check if the patient is verified
     modifier Only_Patients() {
         require(verifiedPatients[msg.sender], "Only verified patients allowed.");
-        _;
+    
     }
 
     // ------------------ Medical Records Upload and Storage ------------------
