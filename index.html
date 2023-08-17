@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Medisync</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:description" name="description" content="Be a part of India&#039;s growing network on trusted neighborhood hospitals. Partner with us to improve patient experience, get clinical support, increase hospital awareness, and reduce costs.">
+    <meta property="og:title" name="title" content="Network of trusted high-quality neighborhood hospitals | Medisync">
+    <meta property="og:keyword" name="keyword" content="hospitals,trusted neighborhood hospitals,neighborhood hospitals">
+    <meta property="og:image" name="image" content="">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/favicon.png">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <!-- <link rel="canonical" href="/"> -->
+    <style media="screen">
+        /* spinner */
+
+        .spinner {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .spinner div {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 7px solid transparent;
+            border-top-color: #0A2B6F;
+            border-radius: 50%;
+            animation: spinnerOne 1.2s linear infinite;
+        }
+
+        .spinner div:nth-child(2) {
+            border: 7px solid transparent;
+            border-bottom-color: #0A2B6F;
+            animation: spinnerTwo 1.2s linear infinite;
+        }
+
+        @keyframes spinnerOne {
+            0% {
+                transform: rotate(0deg);
+                border-width: 10px;
+            }
+            50% {
+                transform: rotate(180deg);
+                border-width: 1px;
+            }
+            100% {
+                transform: rotate(360deg);
+                border-width: 10px;
+            }
+        }
+
+        @keyframes spinnerTwo {
+            0% {
+                transform: rotate(0deg);
+                border-width: 1px;
+            }
+            50% {
+                transform: rotate(180deg);
+                border-width: 10px;
+            }
+            100% {
+                transform: rotate(360deg);
+                border-width: 1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) //Google Tag Manager Code -->
+    <noscript><iframe async="true" src="https://www.googletagmanager.com/ns.html?id=GTM-M2PNTSR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="first-progress" style="height: 100vh; display:flex;justify-content: center; background: white">
+        <img src="/public/svg/loader.svg" alt="" style="width: 3rem">
+    </div>
+
+    <div class="flex-column vh-100" id="body" style="display:none">
+        <div class="d-flex flex-column fixed-top" id='top'>
+            <input type="hidden" id="user-location-number" value="">
+            <nav class="navbar navbar-expand-md justify-content-between py-1 px-0 p-md-2 p-lg-3" id='nav-bar'>
+                <div class="d-flex flex-row">
+                    <button class="button-outline navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+             </button>
+                    <a class="navbar-brand" href="/" id="header-home">
+                      <img class="lazyload header-image" src="/public/images/logo-onwhite.png" alt="Medisync Logo Image" />
+                  </a>
+                    <div class="d-none d-md-block search-box-div align-self-center my-1 mx-2 my-lg-2 mx-lg-4">
+                        <div class="align-self-center search d-flex flex-row justify-content-between">
+                            <input type="text" name="search_term" class="search-hint text-dark" placeholder="Search Specialities, Procedures, Doctors, Hospitals" id="search-desktop" autocomplete="off">
+                        </div>
+                        <div class="section result flex-column p-2" style="display:none" id="result-desktop">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="d-flex flex-row ml-auto align-items-center">
+                    <span class="loc" id="user-header-location"></span>
+                    <a class="d-none d-lg-block back-blue contact-us" href="tel:08061933218" id="call-btn-header-desktop">
+                Speak to a medical expert 080 6193 3218
+              </a>
+                    <a class="back-blue ml-2 ml-md-3" href="/for-patient" id="for-patient">For patients</a>
+                    <a id="call-btn-header-mobile" class="mx-3 d-block d-lg-none call-btn-top nav-link p-0" href="tel:08061933218">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg class="phone-size" version="1.0" width="26px" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve"> <g transform="translate(-1 -1)"> <g> <g> <path fill="#0A2B6F" d="M42.53,35.04l-7.49-4.99c-0.95-0.63-2.22-0.42-2.93,0.48l-2.18,2.8c-0.28,0.37-0.79,0.48-1.2,0.25 l-0.42-0.23c-1.38-0.75-3.09-1.68-6.54-5.13c-3.45-3.45-4.38-5.16-5.13-6.54l-0.23-0.42c-0.23-0.41-0.12-0.92,0.25-1.2l2.8-2.18 c0.9-0.7,1.1-1.98,0.48-2.93l-4.99-7.49c-0.64-0.97-1.93-1.26-2.93-0.66L8.89,8.69c-0.98,0.58-1.71,1.52-2.01,2.61 c-1.13,4.11-0.28,11.2,10.17,21.65c8.31,8.31,14.5,10.54,18.75,10.54c0.98,0,1.95-0.12,2.9-0.38c1.1-0.31,2.04-1.03,2.61-2.01 l1.88-3.13C43.79,36.98,43.5,35.69,42.53,35.04z"/> </g> </g> </g> </svg>
+                    </a>
+                    <a class="ml-lg-3 back-blue" id="login-btn" href="/login" style="display: none">Login</a>
+                    <a class="ml-lg-3 back-blue" id="login-close" href="/" style="display: none">Close</a>
+                    <div class="ml-lg-3 header-dropdown-profile">
+                        <div class="back-blue flex-row px-2 align-items-center" id="user-profile" style="display: none">
+                            <span class="header-profile"></span>
+                            <span id="userName" class="mx-2"></span>
+                            <span class="header-profile-arrow mr-1"></span>
+                        </div>
+                        <div class="dropdown-content-profile">
+                            <a href="/bookings">My Bookings</a>
+                            <a href="/profile">Profile</a>
+                            <span id="logout">Logout</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse" style="flex-grow:unset">
+                    <span id="close-btn"></span>
+                    <div class="d-flex flex-column" id="menu">
+                        <div class="flex-column" id="menu-signed">
+                            <h1>My Profile</h1>
+                            <a class="menu-appointment" href="/bookings">My Bookings</a>
+                            <a class="menu-profile" href="/profile">Profile</a>
+                        </div>
+                        <div class="flex-column" id="menu-sign">
+                            <h1>Sign In</h1>
+                            <a class="menu-login" href="/login">Login</a>
+                        </div>
+                        <h1>Services Offered</h1>
+                        <a class="menu-online" href="/services/online-doctor-consultation">Online Doctor Consultation</a>
+                        <a class="menu-in-hospital" href="/services/in-hospital-consultation">In-Hospital Consultation</a>
+                        <a class="menu-surgery" href="/services/surgeries">Surgeries</a>
+                        <a class="menu-woman" href="/services/woman-and-child">Woman &amp; Child</a>
+                        <!-- <a class="menu-read">Read &amp; Watch</a> -->
+                        <h1>Partners</h1>
+                        <a class="menu-hospital" href="/hospitals">Hospitals</a>
+                        <a class="menu-doctor" href="/doctors/specialities">Doctors</a>
+                        <h1>Know More</h1>
+                        <a class="menu-owners" href="/">For Hospital Owners</a>
+                        <!-- <a class="menu-program" href="https://medisync.org/medisync-ambassador-program/" target="_blank" rel="noopener">Medisync Ambassador Program</a> -->
+                        <a class="menu-about" href="/">About us</a>
+                        <a class="menu-logout" href="/for-patient">Logout</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="d-none d-md-flex more-header shadow-sm" id="drop-down">
+                <div class="header-dropdown arrow-down">
+                    <span>Services Offered</span>
+                    <div class="dropdown-content">
+                        <a id="topnav_services_offered_surgeries" href="/services/surgeries">Surgeries</a>
+                        <a id="topnav_services_offered_woman_and_child" href="/services/woman-and-child">Woman &amp; Child</a>
+                        <a id="topnav_services_offered_in_hospital_consultation" class="" href="/services/in-hospital-consultation">In-Hospital Consultation</a>
+                        <a id="topnav_services_offered_online_doctor_consultation" class="" href="/services/online-doctor-consultation">Online Doctor Consultation</a>
+
+                    </div>
+                </div>
+
+                <a id="topnav_our_doctors" class="for-hospital" href="/doctors/specialities">Our Doctors</a>
+                <a id="topnav_our_hospitals" class="for-hospital" href="/hospitals">Our Hospitals</a>
+                <div class="header-dropdown arrow-down">
+                    <span>About us</span>
+                    <div class="dropdown-content">
+                        <a id="topnav_about_us_vision" href="/vision-mission">Vision</a>
+                        <a id="topnav_about_us_mission" href="/vision-mission">Mission</a>
+                        <a id="topnav_about_us_credo" href="/medisync-services">Services</a>
+                        <a id="topnav_about_us_credo" href="/medisync-credo">Credo</a>
+                        <a id="topnav_about_us_our_team" href="/meet-our-team">Meet Our Team</a>
+                    </div>
+                </div>
+                <a id="topnav_for_hospital_owner" class="for-hospital" href="/">For Hospital Owners</a>
+                <!-- <a class="for-hospital" href="https://medisync.org/medisync-ambassador-program/" target="_blank" rel="noopener">Become a Mediysnc Ambassador</a> -->
+
+
+            </div>
+            <div class="d-flex d-md-none search-box-div px-3 py-2 bg-white shadow-sm">
+                <div class="align-self-center search d-flex flex-row justify-content-between w-100">
+                    <input type="text" name="search_term" class="search-hint text-dark" placeholder="Search Specialities, Procedures, Doctors, Hospitals" id="search-mobile" autocomplete="off">
+                </div>
+                <div class="section result flex-column p-2" style="display:none" id="result-mobile">
+
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between" id='section-data' style="height:100%">
+            <link href="/public/css/website-b2b.css" rel="stylesheet">
+            <link href="/public/css/sprite-horizontal-css.css" rel="stylesheet">
+
+            <div id="progress" style="height: 100vh; display:flex;justify-content: center; background: white">
+                <img src="/public/svg/loader.svg" alt="" style="width: 3rem">
+            </div>
+
+
+
+            <div class="d-none flex-column" id="data-content" style="display: none">
+
+                <div style="position: relative">
+                    <div class="banner-slide">
+                        <div class="slide">
+                            <div class="banner d-flex flex-row w-100">
+                                <img class="w-100 d-none d-md-flex" src="./public/images/new_banner.jpg" alt="Banner" loading="lazy">
+                                <img class="w-100 d-flex d-md-none" src="./public/images/new_mobile_banner.jpg" alt="Banner" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="banner d-flex flex-row w-100">
+                                <img class="w-100 d-none d-md-flex" src="./public/images/B2B-and-B2C-Banners-desktop-v002.jpg" alt="Banner" loading="lazy">
+                                <img class="w-100 d-flex d-md-none" src="./public/images/B2B-and-B2C-Banners-mob-v002.jpg" alt="Banner" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="banner d-flex flex-row w-100">
+                                <img class="w-100 d-none d-md-flex" src="./public/images/B2B-and-B2C-Banners-desktop-v003.jpg" alt="Banner" loading="lazy">
+                                <img class="w-100 d-flex d-md-none" src="./public/images/B2B-and-B2C-Banners-mob-v003.jpg" alt="Banner" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="banner d-flex flex-row w-100">
+                                <img class="w-100 d-none d-md-flex" src="./public/images/B2B-and-B2C-Banners-desktop-v004.jpg" alt="Banner" loading="lazy">
+                                <img class="w-100 d-flex d-md-none" src="./public/images/B2B-and-B2C-Banners-mob-v004.jpg" alt="Banner" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="banner d-flex flex-row w-100">
+                                <img class="w-100 d-none d-md-flex" src="./public/images/B2B-and-B2C-Banners-desktop-v005.jpg" alt="Banner" loading="lazy">
+                                <img class="w-100 d-flex d-md-none" src="./public/images/B2B-and-B2C-Banners-mob-v005.jpg" alt="Banner" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-contact">
+                        <button class="back-blue" data-toggle="modal" data-target="#modal-enquire" id="enquire">Enquire Now</button>
+                        <a rel="noreferrer" href="mailto:business@medisync.org" class="ml-1">
+            <img class="lazyload pl-3" data-src="./public/svg/mail-b2b.svg" alt="Banner" style="height:100%">
+          </a>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row justify-content-between section" id="vision-mission">
+
+                    <div class="vision flex-even">
+                        <h1 class="b2b-title">Purpose</h1>
+                        <p class="b2b-des">We are a knowledge & delivery platform consisting of a central pool of professionals, shared across hospitals to provide best in industry practices, wide network of associates & proprietary technology</p>
+                    </div>
+
+
+                    <div class="vision flex-even">
+                        <h1 class="b2b-title">Vision</h1>
+                        <p class="b2b-des">Our vision is to create a “trusted” network of high quality neighborhood hospitals transforming healthcare delivery in India.</p>
+                    </div>
+
+                    <div class="vision flex-even">
+                        <h1 class="b2b-title">Mission</h1>
+                        <p class="b2b-des">Our mission is to deliver value to all stakeholders in our ecosystem by enabling providers to offer superior patient experience and financial value creation</p>
+                    </div>
+                </div>
+
+                <div class="section d-flex flex-column align-items-center" id='services'>
+
+                    <h1 class="b2b-title p-3 p-md-4">Medisync Services</h1>
+                    <div id="services-accordion" class="accordion d-flex flex-wrap">
+
+                        <div class="order-0 order-lg-0 services-accordion-section justify-content-start justify-content-lg-center" data-toggle="collapse" href="#collapseMedisync0" aria-expanded="true">
+                            <div class="improve-patient-experience"></div>
+                            <span class="services-accordion-title">Improve Patient Experience</span>
+                        </div>
+                        <div id="collapseMedisync0" class="order-1 order-lg-6 services-border collapse show" data-parent="#services-accordion">
+                            <div class="d-flex flex-column align-items-center">
+                                <h1 class="b2b-title py-3 py-md-4 text-center px-3">Improve awareness by investing into and executing activities across</h1>
+                                <div class="services-accordion-inner-section">
+                                    <div>
+                                        <span class="b2b-sprite b2b-pat-exp-1"></span>
+                                        <h2 class="b2b-sub-title">Quality analysis & improvement plan</h2>
+                                        <p class="b2b-sub-des">We conduct a quality analysis and create a roadmap to improve the clinical & non-clinical processes within the hospital.</p>
+                                    </div>
+
+                                    <div>
+                                        <span class='b2b-sprite b2b-pat-exp-2'></span>
+                                        <h2 class="b2b-sub-title">Access to SOPs & technology</h2>
+                                        <p class="b2b-sub-des">We provide access to best in industry processes and protocol to meet the quality requirements to get accrediatation.</p>
+                                    </div>
+
+                                    <div>
+                                        <span class='b2b-sprite b2b-pat-exp-3'></span>
+                                        <h2 class="b2b-sub-title">Implementation</h2>
+                                        <p class="b2b-sub-des">We work with hospitals and their staff to implement the identified processes & technology to ensure hospital meets its quality goals.</p>
+                                    </div>
+
+                                    <div>
+                                        <span class='b2b-sprite b2b-pat-exp-4'></span>
+                                        <h2 class="b2b-sub-title">Staff hiring & training</h2>
+                                        <p class="b2b-sub-des">We help in hire the needed staff & train them to serve the patients better.</p>
+                                    </div>
+
+                                    <div>
+                                        <span class='b2b-sprite b2b-pat-exp-5'></span>
+                                        <h2 class="b2b-sub-title">Access to associate partners</h2>
+                                        <p class="b2b-sub-des">We provide access to our network of associate partners who can help to upgrade support services like housekeeping & security.</p>
+                                    </div>
+
+                                    <div>
+                                        <span class='b2b-sprite b2b-pat-exp-6'></span>
+                                        <h2 class="b2b-sub-title">Continuous audits</h2>
+                                        <p class="b2b-sub-des">We help hospitals to ensure that the quality standards in the hospital are maintained by continuous monitoring and periodic audits.</p>
+                                    </div>
+
+                                </div>
+                                <h1 class="b2b-sub-des"><a href="https://drive.google.com/file/d/196Ut1HJxufDL-LjPRgUHisQa3FpSIsaP/view?usp=sharing" rel="noreferrer target=" _blank "> Click here to view medisync mandate</a></h1>
+              </div>
+            </div>
+
+            <div class="order-2 order-lg-1 services-accordion-section collapsed justify-content-start justify-content-lg-center " data-toggle="collapse " href="#collapseMedisync1 " aria-expanded="false ">
+              <div class="provide-clinical-support "></div>
+              <span class="services-accordion-title ">Provide Clinical Support</span>
+            </div>
+            <div id="collapseMedisync1 " class="order-3 order-lg-7 services-border collapse " data-parent="#services-accordion ">
+              <div class="d-flex flex-column align-items-center ">
+                <h1 class="b2b-title py-3 py-md-4 ">Provide clinicial support, by access to</h1>
+                <div class="section-improve-awareness flex-column flex-md-row ">
+                  <div>
+                    <span class="b2b-sprite b2b-clin-supp-1 "></span>
+                    <h2 class="b2b-sub-title ">Doctor & equipment network</h2>
+                    <p class="b2b-sub-des ">We enable hospitals to improve patient experience & increase availability of needed services through network of doctors empaneled with us. We provide our central pool of equipment on rental basis.This service is available in select geographies.</p>
+                  </div>
+                  <div>
+                      <span class='b2b-sprite b2b-clin-supp-2'></span>
+                      <h2 class="b2b-sub-title ">Clinicial hiring</h2>
+                      <p class="b2b-sub-des ">We analyse clincial requirements and facilitate clinical hiring for the hospitals.</p>
+                  </div>
+                  <div>
+                      <span class='b2b-sprite b2b-clin-supp-3'></span>
+                      <h2 class="b2b-sub-title ">Specialized partner network</h2>
+                      <p class="b2b-sub-des ">We also provide access to our network of specialized partners / associates to manage or setup new specialties.</p>
+                  </div>
+                </div>
+                <h1 class="b2b-sub-des "><a href="https://drive.google.com/file/d/196Ut1HJxufDL-LjPRgUHisQa3FpSIsaP/view?usp=sharing " rel="noreferrer target="_blank"> Click here to view medisync mandate</a>
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div class="order-8 order-lg-5 services-accordion-section collapsed justify-content-start justify-content-lg-center" data-toggle="collapse" href="#collapseMedisync2" aria-expanded="false">
+                            <div class="ensure-success"></div>
+                            <span class="services-accordion-title">Ensure Success</span>
+                        </div>
+                        <div id="collapseMedisync2" class="order-8 order-lg-11 services-border collapse" data-parent="#services-accordion">
+                            <div class="d-flex flex-column text-center px-md-3">
+                                <h1 class="b2b-title py-3 py-md-4">Ensure success </h1>
+                                <p class="b2b-des text-center px-3">We are <b>not just advisors or consultants</b>, we work hand in hand with you to implement all the services mentioned above regularly, to ensure success.
+                                    <b>Your success is our success.</b> </p>
+                            </div>
+                        </div>
+
+                        <div class="order-4 order-lg-3 services-accordion-section collapsed justify-content-start justify-content-lg-center" data-toggle="collapse" href="#collapseMedisync3" aria-expanded="false">
+                            <div class="improve-awareness"></div>
+                            <span class="services-accordion-title">Improve Awareness</span>
+                        </div>
+                        <div id="collapseMedisync3" class="order-5 order-lg-8 services-border collapse" data-parent="#services-accordion">
+                            <div class="d-flex flex-column align-items-center justify-content-between">
+                                <h1 class="b2b-title py-3 py-md-4 text-center px-3">Improve awareness by investing into and executing activities across - </h1>
+                                <div class="d-flex flex-column flex-lg-row">
+                                    <div class="section-improve-awareness flex-column flex-md-row">
+
+                                        <div>
+                                            <span class='b2b-sprite b2b-impr-awareness-1'></span>
+                                            <h2 class="b2b-sub-title">Digital marketing</h2>
+                                            <p class="b2b-sub-des">"We improve footfalls through our digital platform and manage your marketing budget"</p>
+                                        </div>
+
+                                        <div>
+                                            <span class='b2b-sprite b2b-impr-awareness-2'></span>
+                                            <h2 class="b2b-sub-title">Community connects & events</h2>
+                                            <p class="b2b-sub-des">We provide best practices, standardized marketing templates and on-ground execution support to conduct community connects & events within the hospital or neighbouring areas</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="section-improve-awareness flex-column flex-md-row">
+
+                                        <div>
+                                            <span class='b2b-sprite b2b-impr-awareness-3'></span>
+                                            <h2 class="b2b-sub-title">Corporate & local body engagement</h2>
+                                            <p class="b2b-sub-des">We facilitate tie-ups with public sector units & other bodies. We facilitate wellness events at corporate locations</p>
+                                        </div>
+
+                                        <div>
+                                            <span class='b2b-sprite b2b-impr-awareness-4'></span>
+                                            <strong class="b2b-sub-title">Insurance empanelment</strong>
+                                            <p class="b2b-sub-des">We enable hospitals to offer cashless experience to patients by facilitating empanelment with major insurance companies & TPAs. Financial arrangements for supporting during hospitalization</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <h1 class="b2b-sub-des"><a href="https://drive.google.com/file/d/196Ut1HJxufDL-LjPRgUHisQa3FpSIsaP/view?usp=sharing" rel="noreferrer target=" _blank "> Click here to view medisync mandate</a></h1>
+              </div>
+            </div>
+
+            <div class="order-6 order-lg-4 services-accordion-section collapsed justify-content-start justify-content-lg-center " data-toggle="collapse " href="#collapseMedisync4 " aria-expanded="false ">
+              <div class="reduce-costs "></div>
+              <span class="services-accordion-title ">Reduce Costs</span>
+            </div>
+            <div id="collapseMedisync4 " class="order-7 order-lg-9 services-border collapse " data-parent="#services-accordion ">
+              <div class="d-flex flex-column align-items-center justify-content-between ">
+                <h1 class="b2b-title py-3 py-md-4 ">Reduce costs by -</h1>
+                <div class="section-improve-awareness flex-column flex-md-row ">
+
+                  <div>
+                    <span class='b2b-sprite b2b-reduce-costs-1'></span>
+                    <h2 class="b2b-sub-title ">Access to sourcing partners</h2>
+                    <p class="b2b-sub-des ">We provide hospitals access to large sourcing partners through Medisync network and help them purchase consumables & pharmacy at special rates due to economies of scale.</p>
+                  </div>
+
+                  <div>
+                      <span class='b2b-sprite b2b-reduce-costs-2'></span>
+                      <h2 class="b2b-sub-title ">Other cost improvements</h2>
+                      <p class="b2b-sub-des ">We benchmark hospitals costs versus industry standards thereby helping you to identify & implement other areas of cost savings.</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section d-flex flex-column align-items-center px-md-3 " id='hospitals'>
+      <h1 class="b2b-title pt-3 pt-md-4 ">Medisync Managed Hospitals</h1>
+      <nav class="nav-justified bg-white nav-hospital ">
+          <div class="nav nav-tabs net-hospitals d-none " id="nav-tab " role="tablist ">
+              <a class="nav-item nav-link tab-font active " id="managed-tab " data-toggle="tab " href="#managed " role="tab " aria-controls="board-director " aria-selected="true ">Managed Hospitals</a>
+              <a class="nav-item nav-link tab-font " id="associated-tab " data-toggle="tab " href="#associated " role="tab " aria-controls="management-team " aria-selected="false ">Network Hospitals</a>
+          </div>
+      </nav>
+
+      <div class="tab-content pb-md-3 px-md-5 px-sm-0 w-100 " id="nav-tabContent ">
+
+        <div class="bg-white " id="progress " style="height: 300px ">
+            <div class="h-100 d-flex align-items-center justify-content-center ">
+                <div class="d-flex spinner-services-border text-primary " role="status ">
+                    <span class="sr-only ">Loading...</span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section d-flex flex-column align-items-center section-inner-padding " id="credo ">
+
+      <h1 class="b2b-title py-3 py-md-4 ">Medisync Credo</h1>
+
+        <div class="services-accordion-inner-section ">
+          <div>
+            <span class='b2b-sprite b2b-credo-1'></span>
+            <h2 class="b2b-sub-title ">Credentialing of Doctors</h2>
+            <p class="b2b-sub-des ">We ensure patients are treated by qualified doctors</p>
+          </div>
+
+          <div>
+            <span class='b2b-sprite b2b-credo-2'></span>
+            <h2 class="b2b-sub-title ">Centricity on Patients - 6 Es</h2>
+            <p class="b2b-sub-des ">Empathy, Empowerment, Ease in hospital experience, Excellence in Hospitality, Efficiency in systems &amp; Environment – Patient and Staff Safety</p>
+          </div>
+          <div>
+            <span class='b2b-sprite b2b-credo-3'></span>
+            <h2 class="b2b-sub-title ">Counselling regarding clinical care and financials</h2>
+            <p class="b2b-sub-des ">Counselling regarding hospital care and financials</p>
+          </div>
+          <div>
+            <span class='b2b-sprite b2b-credo-4'></span>
+            <h2 class="b2b-sub-title ">Care - Uniform</h2>
+            <p class="b2b-sub-des ">Every patient gets the same high-quality care irrespective of financial status</p>
+          </div>
+          <div>
+            <span class='b2b-sprite b2b-credo-5'></span>
+            <h2 class="b2b-sub-title ">Conspicuous Billing</h2>
+            <p class="b2b-sub-des ">No shocks, no surprises</p>
+          </div>
+          <div>
+            <span class='b2b-sprite b2b-credo-6'></span>
+            <h2 class="b2b-sub-title ">Campaign- Second Opinion</h2>
+            <p class="b2b-sub-des ">We support second opinion and facilitate if required</p>
+          </div>
+        </div>
+    </div>
+
+    <div class="section d-flex flex-column align-items-center section-inner-padding " id="why-medisync ">
+      <h1 class="b2b-title pt-3 pt-md-4 ">Why Medisync?</h1>
+      <p class="b2b-des text-center ">At medisync, we have invested in creating a central pool of accomplished experts from top institutions in healthcare, <br>best in industry processes, wide network of clinical partners, non-clinical partners & proprietary technology.</p>
+      <div class="d-flex flex-row w-100 align-items-center ">
+          <div class="flex-even draw-line "></div>
+          <span class="b2b-des mx-3 ">OUR SERVICES ARE UNIQUE BECAUSE OF</span>
+          <div class="flex-even draw-line "></div>
+      </div>
+        <div class="d-flex flex-column flex-md-row justify-content-between section-improve-awareness ">
+
+          <div>
+              <span class='b2b-sprite b2b-why-medisync-1'></span>
+              <h2 class="b2b-sub-title ">Customization</h2>
+              <p class="b2b-sub-des ">We analyse the gaps & prepare customized solutions</p>
+          </div>
+
+          <div>
+              <span class='b2b-sprite b2b-why-medisync-2'></span>
+              <h2 class="b2b-sub-title ">Ownership retention</h2>
+              <p class="b2b-sub-des ">All policy decisions are in consultation with the owner and the participate in strategy & changes so they are aware of developments periodically.</p>
+          </div>
+
+          <div>
+              <span class='b2b-sprite b2b-why-medisync-3'></span>
+              <h2 class="b2b-sub-title ">Commercials</h2>
+              <p class="b2b-sub-des ">"Fixed fee: Cost of dedicated resource + Central resource fee Variable Fee:15% of the incremental revenue and 25% of the cost savings. "</p>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="section d-flex flex-column align-items-center section-inner-padding " id='our-team'>
+        <h1 class="b2b-title py-3 py-md-4 ">Meet Our Team</h1>
+        <nav class="nav-justified bg-white ">
+            <div class="nav nav-tabs " id="nav-tab " role="tablist ">
+                                <a class="nav-item nav-link tab-font active " id="management-team-tab " data-toggle="tab " href="#management-team " role="tab " aria-controls="management-team " aria-selected="true ">Leardership Team</a>
+                <a class="nav-item nav-link tab-font " id="advisors-tab " data-toggle="tab " href="#advisors " role="tab " aria-controls="advisors " aria-selected="false ">Advisors</a>
+
+            </div>
+        </nav>
+
+        <div class="tab-content py-md-3 px-md-3 px-sm-0 " id="nav-tabContent ">
+            
+
+
+
+            <div class="tab-pane fade show active " id="management-team " role="tabpanel " aria-labelledby="management-team-tab ">
+
+
+
+                <div id="management-acc-team " class="accordion d-flex flex-wrap w-100 ">
+                    <div class="d-flex flex-wrap justify-content-start align-items-center ">
+
+
+                        <div class="order-0 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team0 " aria-expanded="false ">
+                            <div class="d-flex flex-row py-3 ">
+                                <img loading="lazy " class="doc-image " src="/public/images/team_members/director_img1.jpg " alt="director_img1 ">
+                                <div class="d-flex flex-column px-2 ">
+                                    <strong class="doc-name ">Dr. Nagendra Swamy</strong>
+                                    <p class="doc-des ">Founder & Chairman</p>
+                                    <span class="doc-former ">MBBS, MD (Hosp. Administration)</span>
+                                    <p class="doc-former ">Former Group Medical Director - Manipal Hospitals</p>
+                                </div>
+                            </div>
+                            <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team0 " class="order-1 order-md-2 order-lg-3 doc-details-section collapse " data-parent="#management-acc-team ">
+                            <div class="doc-details ">
+                              <div class="inline_arrow arrow-position1 "></div>
+                                <h2 class="doc-name ">Dr. Nagendra Swamy</h2>
+                                <p class="doc-des ">Founder & Chairman</p>
+                                <span class="doc-former ">MBBS, MD (Hosp. Administration)</span>
+                                <p class="doc-former ">
+                                  Dr. Nagendra Swamy has over 30 years of experience in healthcare management with national and international organizations as a board member and part of the top management. He was the Former Group Medical Director and Chairman of the Quality Council at Manipal Health Enterprises. He holds MBBS and MD degree in Hospital Administration. Presently he is associated in various senior roles with JSS Medical College, SDM College of Medical Sciences, Symbiosis Medical College and Research Centre; and True North. He has been awarded the “ Doctor’s Day Award '' by Govt. Of Karnataka, “Distinguished Alumni” by Manipal University; “Certificate of Appreciation” by Indian Medical Association for supporting Medical Fraternity. Dr. Swamy is the Principal Coordinator of the Federation of Healthcare Associations (FHA), Karnataka. He is also the executive director of the Academy of Hospital Administration (Bangalore Chapter). He is a member of the executive committee of the Consortium of Accredited Healthcare Organizations (CAHO).</p>
+                            </div>
+                        </div>
+
+
+                        <div class="order-1 order-md-1 order-lg-1 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team1 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/leadership_img2.jpg " alt="leadership_img2 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Dr Narendranath V.</strong>
+                              <p class="doc-des ">Co-Founder & Group Medical Director</p>
+                              <span class="doc-former ">MBBS, MD (Hosp. Administration)</span>
+                              <p class="doc-former ">Former Chief Administrator, M.S.Ramaiah hospitals</p>
+
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team1 " class="order-2 order-md-2 order-lg-3 doc-details-section collapse " data-parent="#management-acc-team ">
+                          <div class="doc-details ">
+                            <div class="inline_arrow arrow-position1 "></div>
+                            <strong class="doc-name ">Dr Narendranath V.</strong>
+                            <p class="doc-des ">Co-Founder & Group Medical Director</p>
+                            <span class="doc-former ">MBBS, MD (Hosp. Administration)
+                            Former Chief Administrator, M.S.Ramaiah hospitals</span>
+                            <p class="doc-former ">Dr. Narendranth brings over 25 years of experience. He was a professor, Hospital Administration at M.S.Ramaiah Medical College for over 15 years. He holds an MBBS and MD degree in hospital administration. He is an active member of several professional bodies such as Consortium of Accredited Healthcare Organisations (CAHO), Academy of Hospital Administration (AHA), New Delhi, Chapters, Indian Society of Hospital Wate Management (ISHWM) and the Private Hospitals & Nursing Homes Association (PHANA), among others.
+                            </p>
+                          </div>
+                        </div>
+
+
+                       <!--  <div class="order-1 order-md-1 order-lg-1 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team2 " aria-expanded="false ">
+                            <div class="d-flex flex-row py-3 ">
+                              <img loading="lazy " class="doc-image " src="/public/images/team_members/sanjay.jpg " alt="leadership_img2 ">
+                              <div class="d-flex flex-column px-2 ">
+                                <strong class="doc-name ">Sanjay Nadkarni</strong>
+                                <p class="doc-des ">Chief Business Officer</p>
+                                <p class="doc-former ">Former Country Manager Operations - Houzz.com & Co-Founder - Babyoye.com</p>
+                              </div>
+                            </div>
+                            <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team2 " class="order-2 order-md-2 order-lg-3 doc-details-section collapse " data-parent="#management-acc-team ">
+                            <div class="doc-details ">
+                                <div class="inline_arrow arrow-position2 "></div>
+                                <strong class="doc-name ">Sanjay Nadkarni</strong>
+                                <p class="doc-des ">Chief Business Officer</p>
+                                <p class="doc-former ">Former Country Manager Operations - Houzz.com & Co-Founder - Babyoye.com</p>
+                                <p class="doc-former ">Sanjay started his career with SIFY and Bharti Airtel holding several positions from commercial management, product management, network planning to consulting and solutions before cofounding babyoye.com. He built Babyoye from scratch, a journey that went on for about 6 years before it was acquired by the Mahindra & Mahindra Group. In his last assignment, he was Country Manager Operations for houzz.com in India. He holds a bachelors degree in Chemical Engineering and a Masters in Business Administration.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="order-2 order-md-2 order-lg-2 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team3 " aria-expanded="false ">
+                            <div class="d-flex flex-row py-3 ">
+                              <img loading="lazy " class="doc-image " src="/public/images/team_members/dr-mahesh-inder.jpg " alt="leadership_img3 ">
+                              <div class="d-flex flex-column px-2 ">
+                                <strong class="doc-name ">Dr Mahesh Inder VS</strong>
+                                <p class="doc-des ">Chief Operating Officer</p>
+                                <p class="doc-former ">Former Vice President - Wolters Kluwer and Associate Partner - McKinsey & Company</p>
+                              </div>
+                            </div>
+                            <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team3 " class="order-3 order-md-4 order-lg-3 doc-details-section collapse " data-parent="#management-acc-team ">
+                            <div class="doc-details ">
+                                <div class="inline_arrow arrow-position3 "></div>
+                                <strong class="doc-name ">Dr Mahesh Inder VS</strong>
+                                <p class="doc-des ">Former Vice President - Wolters Kluwer and Associate Partner - McKinsey & Company</p>
+                                <p class="doc-former ">Dr. Mahesh is a senior business leader delivering impact and business outcomes for the last 20+ years. Prior to joining Medisync, he was a Senior Consultant at McKinsey and held senior management roles at Wolters Kluwer, Max Hospital, Manipal Hospitals, Fortis Hospitals and as CEO of Saket Hospital. He is also the co-founder, investor & advisor at Credihealth, a digital health platform serving healthcare needs of the population. He holds MBBS and MD (Anesthesia) degrees.</p>
+                            </div>
+                        </div> -->
+                        
+
+                        <div class="order-2 order-md-2 order-lg-2 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team2 " aria-expanded="false ">
+                            <div class="d-flex flex-row py-3 ">
+                              <img loading="lazy " class="doc-image " src="/public/images/team_members/dr-chandil.jpg " alt="leadership_img3 ">
+                              <div class="d-flex flex-column px-2 ">
+                                <strong class="doc-name ">Dr. Chandil Gunashekar</strong>
+                                <p class="doc-des ">COO - Operations</p>
+                                <p class="doc-former ">Former Chief Operating Officer - Aster CMI Hospital</p>
+                              </div>
+                            </div>
+                            <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team2 " class="order-3 order-md-4 order-lg-3 doc-details-section collapse " data-parent="#management-acc-team ">
+                            <div class="doc-details ">
+                                <div class="inline_arrow arrow-position2 "></div>
+                                <strong class="doc-name ">Dr. Chandil Gunashekar</strong>
+                                <p class="doc-des ">COO - Operations</p>
+                                <p class="doc-former ">Former Chief Operating Officer - Aster CMI Hospital</p>
+                                <p class="doc-former ">Dr. Chandil Gunashekar has 15 years of experience in providing Public Health operational leadership in uniquely challenging situations involving digital health innovations. He worked in areas of Strategic Management, Vision and Mission Planning, Technology Adoption in Healthcare Finance and Budgeting. Prior to joining Medisync as VP Operations, Dr. Chandil has worked with Narayana Health, Motherhood and his last assignment was with Aster CMI Hospital as COO. He has MBBS, MHA (TISS), AMP (IIM) degrees.</p>
+                            </div>
+                        </div>
+
+                        <div class="order-3 order-md-3 order-lg-3 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team3 " aria-expanded="false ">
+                            <div class="d-flex flex-row py-3 ">
+                              <img loading="lazy " class="doc-image " src="/public/images/team_members/nilesh.jpg " alt="leadership_img3 ">
+                              <div class="d-flex flex-column px-2 ">
+                                <strong class="doc-name ">Nilesh Mehta</strong>
+                                <p class="doc-des ">Group Procurement Head</p>
+                                <p class="doc-former ">Former Regional Supply Chain Head - Fortis Hospitals</p>
+                              </div>
+                            </div>
+                            <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team3 " class="order-4 order-md-4 order-lg-6 doc-details-section collapse " data-parent="#management-acc-team ">
+                            <div class="doc-details ">
+                              <div class="inline_arrow arrow-position3 "></div>
+                              <strong class="doc-name ">Nilesh Mehta</strong>
+                              <p class="doc-des ">Group Procurement Head</p>
+                              <p class="doc-former ">Mr. Nilesh is with Healthcare from 2004 and Worked with Wockhardt Hospitals now Fortis Healthcare for 16 years as Regional Supply Chain Head for South, West and East India hospitals covering 13 hospitals. He is a qualified  Diploma Holder in Mech Engg, Diploma in Materials Mgt and Graduate Diploma Holder in Materials Mgt.</p>
+                            </div>
+                        </div>
+
+                        <div class="order-4 order-md-4 order-lg-4 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team7 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/new_member/arun_mavaji.jpg " alt="leadership_img3 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Dr. Arun Mavaji</strong>
+                              <p class="doc-des ">Head - Regional Operations</p>
+                              <p class="doc-former ">MBBS, MD (Hospital Administration), DNB (Health and Hospital Administration)</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team7 " class="order-5 order-md-6 order-lg-6 doc-details-section collapse " data-parent="#management-acc-team ">
+                          <div class="doc-details ">
+                            <div class="inline_arrow arrow-position3 "></div>
+                            <strong class="doc-name ">Dr. Arun Mavaji</strong>
+                            <p class="doc-des ">Head - Regional Operations.</p>
+                            MBBS, MD (Hospital Administration), DNB (Health and Hospital Administration)
+                            <p class="doc-former ">Prior to joining us he was associated with Kasturba Medical College & Hospital, Manipal Ramaiah Memorial Hospital and Ramaiah Medical College.</p>
+                          </div>
+                        </div>
+
+                        <div class="order-5 order-md-5 order-lg-5 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team8 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/new_member/prameela_m.jpg " alt="leadership_img3 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Prameela M</strong>
+                              <p class="doc-des ">General Manager – Administration</p>
+                              <p class="doc-former ">B.Com, MBA</p>
+                              
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team8 " class="order-6 order-md-6 order-lg-6 doc-details-section collapse " data-parent="#management-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position1 "></div>
+                              <strong class="doc-name ">Prameela M</strong>
+                              <p class="doc-des ">General Manager – Administration</p>
+                              <p class="doc-former ">Prameela has done B.Com from Calicut University and MBA in Finance from Bhartiya University. Before joining us, she was associated with NU Hospitals Pvt. Ltd. She has 15 years of experience in the Hospital Industry in areas of Operations /HR / Admin /Finance. Her last assignment was with Victor Hospital, Goa as Director of Finance and Operations</p>
+                           </div>
+                        </div>
+
+                        <div class="order-9 order-md-9 order-lg-9 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team9 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/new_member/abarna.png " alt="leadership_img3 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Ms. Abarna Jeslin Benjamin</strong>
+                              <p class="doc-des ">Head of Nursing & Nursing Quality Management.</p>
+                              
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team9 " class="order-10 order-md-11 order-lg-11 doc-details-section collapse " data-parent="#management-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position2 "></div>
+                              <strong class="doc-name ">Ms. Abarna Jeslin Benjamin</strong>
+                              <p class="doc-des ">Head of Nursing & Nursing Quality Management.</p>
+                              <p>Abarna has done Diploma in Nursing from CMAI Scudder Memorial Hospital, Ranipet & Post B.Sc. Nursing, from the Rajiv Gandhi University of Bangalore.Prior to joining us she was associated with Jyotsna Hospital, Cloudnine Hospital, Columbia Asia Hospital and her last assignment was with Victor Hospital, Goa as Chief Nursing Superintendent.</p>
+                           </div>
+                        </div>
+
+
+                        <div class="order-10 order-md-9 order-lg-9 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#management-team10 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/new_member/abinav.jpg " alt="leadership_img3 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Dr. Abhinav Wankar</strong>
+                              <p class="doc-des ">Zonal COO ( Telangana and Andhra Pradesh)</p> 
+                              <p class="doc-former ">MBBS, DNB, MNAMS, AMPH(ISB), PGDMLS, PGHPD, PGDHA, FISQUA(Ireland)</p>
+                              
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="management-team10 " class="order-10 order-md-11 order-lg-11 doc-details-section collapse " data-parent="#management-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position2 "></div>
+                              <strong class="doc-name ">Dr. Abhinav Wankar</strong>
+                              <p class="doc-des ">Zonal COO ( Telangana and Andhra Pradesh) </p>
+                              <p class="doc-former ">MBBS, DNB, MNAMS, AMPH(ISB), PGDMLS, PGHPD, PGDHA, FISQUA(Ireland)</p>
+                              <p class="doc-former ">Dr. Abhinav Wankar is an ISB Hyderabad and AIIMS Delhi Alumni. He has worked in various prestigious organizations such as AIIMS, New Delhi, Yashoda Hospital, Hyderabad, Sahyadri Hospital, Pune, and KIMS-Kingsway Hospitals, Nagpur. He led Operations in many organizations and worked on strategic and operational aspects. His special interest in technology saw him become part of Indiabulls Healthcare taking care of teleconsultation and e-pharmacy and has been a Healthcare Consultant for companies such as Paralaxiom, an AI-based company formed by a group of IITians. </p>
+                              
+                           </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade " id="advisors " role="tabpanel " aria-labelledby="advisors-tab ">
+                <div id="advisors-acc-team " class="accordion d-flex flex-column w-100 ">
+                  <div class="d-flex flex-wrap justify-content-start align-items-center ">
+                      <div class="order-0 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team1 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/advisors_img1.jpg " alt="leadership_img1 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Dr. K Girdharidas Belani</strong>
+                              <p class="doc-des ">MBBS, MS, FACA, FAAP</p>
+                              <p class="doc-former ">Distinguished International Professor - University of Minnesota</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                      </div>
+
+                      <div id="advisors-team1 " class="order-1 order-md-2 order-lg-3 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position1 "></div>
+                              <strong class="doc-name ">Dr. K Girdharidas Belani</strong>
+                              <p class="doc-des ">MBBS, MS, FACA, FAAP</p>
+                              <p class="doc-former ">Distinguished International Professor - University of Minnesota</p>
+                              <p class="doc-former ">Dr. Kumar Girdharidas Belani is a Distinguished International Professor at the Academic Health Center, University of Minnesota and serves as a Professor in the Department of Anesthesiology and as an adjunct Professor in Medicine, Pediatrics, and Environmental Health Sciences in the Schools of Medicine & Public Health at the University of Minnesota. Dr. Belani has over 100 peer-reviewed publications and he has been an invited speaker locally, nationally, and internationally. </p>
+                          </div>
+                      </div>
+
+
+                      <div class="order-1 order-md-1 order-lg-1 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team2 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/advisors_img3.jpg " alt="leadership_img2 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Dr. Mohan Chellappa</strong>
+                              <p class="doc-des ">MD, FRCS, FACS</p>
+                              <p class="doc-former ">President, Global Ventures - Johns Hopkins Medicine International</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                      </div>
+
+                      <div id="advisors-team2 " class="order-2 order-md-2 order-lg-3 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position2 "></div>
+                              <strong class="doc-name ">Dr. Mohan Chellappa</strong>
+                              <p class="doc-des ">MD, FRCS, FACS</p>
+                              <p class="doc-former ">President, Global Ventures - Johns Hopkins Medicine International</p>
+                              <p class="doc-former ">Dr. Mohan Chellappa is currently serving as the President, Global Ventures, at Johns Hopkins Medicine International (JHMI).
+                                A founding member of JHMI, he is involved in the development of international clinical consultancy activities and clinical care programs,
+                                 implementation of quality systems, and utilization of IT in healthcare.
+                              </p>
+                          </div>
+                      </div>
+
+
+                      <div class="order-2 order-md-2 order-lg-2 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team3 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/advisors_img2.jpg " alt="leadership_img3 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Sudhir Pai</strong>
+                              <p class="doc-des ">Chartered Accountant</p>
+                              <p class="doc-former ">Founder & Director - Prameya Health & Advisor - Value Point Systems</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                      </div>
+
+                      <div id="advisors-team3 " class="order-3 order-md-4 order-lg-3 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position3 "></div>
+                              <strong class="doc-name ">Sudhir Pai</strong>
+                              <p class="doc-des ">Chartered Accountant</p>
+                              <p class="doc-former ">Founder & Director - Prameya Health & Advisor - Value Point Systems</p>
+                              <p class="doc-former ">He is a Chartered Accountant with more than 25 years of business experience. He has vast experience working with clients globally to bring business into India, has been part of the board at various large healthcare MNCs. He was recognized as a pioneer in the biotech industry for his contribution to the clinical research industry. His recent engagement was to successfully turn around of a sick hospital. He is the founder and director of Prameya Health Private Limited. He is also an advisor to the board for Value Point Systems Private Limited.</p>
+                          </div>
+                      </div>
+
+                      <div class="order-3 order-md-3 order-lg-3 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team4 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/advisors_img4.jpg " alt="leadership_img3 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Shashank ND</strong>
+                              <p class="doc-des ">B.Tech</p>
+                              <p class="doc-former ">Founder & CEO - Practo Technologies</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                      </div>
+
+                      <div id="advisors-team4 " class="order-4 order-md-4 order-lg-6 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position1 d-lg-flex d-md-none "></div>
+                              <div class="inline_arrow arrow-position2 d-lg-none d-md-flex d-none "></div>
+                              <strong class="doc-name ">Shashank ND</strong>
+                              <p class="doc-des ">B.Tech</p>
+                              <p class="doc-former ">Founder & CEO - Practo Technologies</p>
+                              <p class="doc-former ">He has been featured in the Forbes 30 under 30 list of young influential people to watch and the 2016 Fortune 40 under 40 most promising business leaders in India</p>
+                          </div>
+                      </div>
+
+                      <div class="order-4 order-md-4 order-lg-4 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team6 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/advisors_img5.jpg " alt="leadership_img2 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Dr. Alexander Kuruvilla</strong>
+                              <p class="doc-des ">MBBS, DMRD, MD</p>
+                              <p class="doc-former ">Chief Strategy Officer - Practo Technologies</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                      </div>
+
+                      <div id="advisors-team6 " class="order-5 order-md-6 order-lg-6 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position2 d-lg-flex d-md-none "></div>
+                              <div class="inline_arrow arrow-position1 d-lg-none d-md-flex d-none "></div>
+                              <strong class="doc-name ">Dr. Alexander Kuruvilla</strong>
+                              <p class="doc-des ">MBBS, DMRD, MD</p>
+                              <p class="doc-former ">PChief Strategy Officer - Practo Technologies</p>
+                              <p class="doc-former ">Dr. Alexander Kuruvilla has over 20 years of experience in the healthcare industry spanning - Hospitals, Health Insurance Schemes, Healthcare Consultancy, Public-Private Partnership, National and State Government Healthcare Programs & Private Equity Funding. He is currently the Chief Strategy Officer at Practo & Board Member at MGM Corporate Hospital in Chennai. He has held many other leadership positions throughout his career as a CEO at SIMS Institute of Medical Sciences in Chennai, Founding Partner / Joint Managing Director at Medica Synergie in Kolkata, CEO at Apollo Hospitals in Ahmedabad
+                              </p>
+                          </div>
+                      </div>
+
+
+                      <div class="order-5 order-md-5 order-lg-5 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team7 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/1516631399236.jpg " alt="leadership_img3 ">
+                            <div class="d-flex flex-column px-2 ">
+                              <strong class="doc-name ">Ramoji Tejomurtula</strong>
+                              <!-- <p class="doc-des ">Chartered Accountant and CS</p> -->
+                              <p class="doc-former ">Finance, Strategic Initiatives and Digital Healthcare</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                      </div>
+
+                      <div id="advisors-team7 " class="order-6 order-md-6 order-lg-6 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                          <div class="doc-details ">
+                              <div class="inline_arrow arrow-position3 d-lg-flex d-md-none "></div>
+                              <div class="inline_arrow arrow-position2 d-lg-none d-md-flex d-none "></div>
+                              <strong class="doc-name ">Ramoji Tejomurtula</strong>
+                              <!-- <p class="doc-des ">Chartered Accountant and CS</p> -->
+                              <p class=" ">Finance, Strategic Initiatives and Digital Healthcare<p>
+                              <p class="doc-former ">Ramoji has been with Healthcare Industry for the past 2 decades
+                              Handled finance, strategic initiatives and M&A of Manipal Health, which is one of the largest healthcare groups in the Country. Ramoji was also Managing Director of Manipal CDC Ventures, a JV between Manipal and CDC which invests in out-of-hospitals healthcare initiatives.
+                              He has been on the boards of several healthcare companies mentoring the leadership teams.
+                              Prior to working with Manipal Group, he had career foundation with Taj Group of Hotels.
+                              Recipient of <b>Excellence Award for “Corporate Governance”</b>
+                              Passionate about Digital Healthcare; Has led many digital initiatives of the group and personally ventured into digital healthcare activities.</p>
+                          </div>
+                      </div>
+
+                      <div class="order-6 order-md-6 order-lg-6 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team8 " aria-expanded="false ">
+                          <div class="d-flex flex-row py-3 ">
+                            <img loading="lazy " class="doc-image " src="/public/images/team_members/leadership_img1.jpg " alt="leadership_img1 ">
+                          <div class="d-flex flex-column px-2 ">
+                            <strong class="doc-name ">Shariq Plasticwala</strong>
+                            <p class="doc-des ">Advisor</p>
+                            <p class="doc-former ">Seed team - Amazon & Former CEO - AmazonJoint Venture</p>
+                            </div>
+                          </div>
+                          <button class="back-blue ">View Details</button>
+                      </div>
+
+                      <div id="advisors-team8 " class="order-7 order-md-8 order-lg-9 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                          <div class="doc-details ">
+                            <div class="inline_arrow arrow-position3 "></div>
+                            <strong class="doc-name ">Shariq Plasticwala</strong>
+                            <p class="doc-des ">Advisor</p>
+                            <p class="doc-former ">Shariq Plasticwala has experience in the transformation of small and medium retail businesses from offline to online leveraging technology. He was part of the Seed team at Amazon India,
+                              Ex-Board Member at Amazon Pay & CEO for an Amazon Joint Venture. Shariq has completed B.Tech from IIT Bombay and MBA from Stanford University.</p>
+                          </div>
+                      </div>
+
+                      <div class="order-7 order-md-7 order-lg-7 doc-section-width mx-lg-3 collapsed " data-toggle="collapse " data-target="#advisors-team9 " aria-expanded="false ">
+                            <div class="d-flex flex-row py-3 ">
+
+                                <img loading="lazy " class="doc-image " src="/public/images/team_members/new_member/kothandaraman.png " alt="kothandaraman.png ">
+                              <div class="d-flex flex-column px-2 ">
+                                <strong class="doc-name ">Mr. Kothandaraman Sridharan</strong>
+                                <p class="doc-des ">Advisor</p>
+                                <p class="doc-former ">CEO, CleverInsight</p>
+                              </div>
+                            </div>
+                            <button class="back-blue ">View Details</button>
+                        </div>
+
+                        <div id="advisors-team9 " class="order-8 order-md-9 order-lg-10 doc-details-section collapse " data-parent="#advisors-acc-team ">
+                            <div class="doc-details ">
+                              <div class="inline_arrow arrow-position3 "></div>
+                              <strong class="doc-name ">Mr. Kothandaraman Sridharan</strong>
+                              <p class="doc-des ">Advisor</p>
+                              <p class="doc-former ">Kothandaraman Sridharan (Sri) is a technocrat, leader, and innovator with 30+ years of experience in the software-service industry, product development, IT strategic consulting, and AI & Data Science domains. He has been a technology advisor for Fortune 500 companies globally. He has advised development centers in Latin America and led expansions in China for growth-focused companies. Sri has led M&A deals for software companies and currently is on the advisory board for universities in US & Asia as well as to bay area-based product companies.Sri is currently the CEO of CleverInsight, actively working on building an AI & Data Science solution focusing on Public Education, Public Health, Life Sciences, Manufacturing and Agriculture sectors. He is helping to build AI & Data Science departments for universities in emerging markets to promote the next technology horizons and to provide better access and opportunities to students and corporate executives.</p>
+                            </div>
+                        </div>
+
+                  </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section d-flex flex-column align-items-center section-inner-padding " id="success-stories ">
+
+        <h1 class="b2b-title ">Success stories</h1>
+        <p class="b2b-des text-center ">Our firm is a year old but our experts involved have decades of experience managing & scaling hospitals. Our success stories are below: –</p>
+
+
+        <div class="d-flex flex-column flex-md-row w-100 justify-content-around ">
+            <div class="flex-even d-flex flex-column success-graph align-items-start ">
+                <!-- <h1 class="b2b-title-teal ">Large Hospital</h1> -->
+                <img loading="lazy " class="graph-image " src="/public/images/graph-low.png " alt="graph-low " style="width: -webkit-fill-available;height:100% ">
+            </div>
+            <div class="flex-even d-flex flex-column justify-content-center align-items-center align-items-md-start ">
+                <div class="d-flex flex-column align-items-center align-items-md-start ">
+                    <h4 class="b2b-title ">Revenue</h4>
+                    <p class="b2b-des ">15% increase</p>
+                </div>
+                <div class="d-flex flex-column align-items-center align-items-md-start ">
+                    <h4 class="b2b-title ">Number of OP visits / month</h4>
+                    <p class="b2b-des ">8.5K to 10K</p>
+                </div>
+                <div class="d-flex flex-column align-items-center align-items-md-start ">
+                    <h4 class="b2b-title ">Patient occupancy</h4>
+                    <p class="b2b-des ">45 to 90 Beds</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row justify-content-between " id="success-info ">
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">Marketing Improvements</b>
+                <span class="b2b-sub-des ">We helped in establishing a marketing department to improve footfalls and branding. Enabled digital marketing, domestic tourism and community events.</span>
+            </div>
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">Patient Experience Improvements</b>
+                <span class="b2b-sub-des ">Conducted quality analysis, implemented best processes, trained nurses & staff.</span>
+            </div>
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">New Specialities & Services</b>
+                <span class="b2b-sub-des ">Addition of Neurosurgery specialty & introducing services like MRI & Homecare. Hiring of key management and clinical personnel.</span>
+            </div>
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">Reducing Sourcing Costs</b>
+                <span class="b2b-sub-des ">Inventory reduction by streamlining procurement process & holding only required stock. Identified INR 1Cr+ of cost savings opportunity.</span>
+            </div>
+        </div>
+
+        <div class="d-none flex-column flex-md-row w-100 small-hospital justify-content-around ">
+
+            <div class="flex-even d-flex flex-column success-graph align-items-start ">
+                <h1 class="b2b-title-teal ">Small Hospital</h1>
+                <img loading="lazy " class="graph-image " src="/public/images/graph-low.png " alt="graph-low " style="width: -webkit-fill-available;height:100% ">
+            </div>
+
+            <div class="flex-even d-flex flex-column justify-content-center align-items-center align-items-md-start ">
+                <div class="d-flex flex-column align-items-center align-items-md-start ">
+                    <h4 class="b2b-title ">Revenue</h4>
+                    <p class="b2b-des ">9% increase</p>
+                </div>
+                <div class="d-flex flex-column align-items-center align-items-md-start ">
+                    <h4 class="b2b-title ">Net Promoter Score*</h4>
+                    <p class="b2b-des ">2x Increase</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-none flex-column flex-md-row justify-content-between " id="success-info ">
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">Marketing Improvements</b>
+                <span class="b2b-sub-des ">Facilitating insurance empanelment & community connects.</span>
+            </div>
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">Patient Experience Improvements</b>
+                <span class="b2b-sub-des ">Improved customer experience by making patient feedback a mandatory part of discharge process, introduced treatment packages to ease the billing & counselling process.</span>
+            </div>
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">New Services</b>
+                <span class="b2b-sub-des ">Upgradation of diagnostic services.</span>
+            </div>
+            <div class="d-flex flex-column success-column align-items-center align-items-md-start flex-even p-2 ">
+                <b class="b2b-sub-title ">Reducing Sourcing Costs</b>
+                <span class="b2b-sub-des ">Identified cost savings in pharmacy & consumables sourcing & enabled new vendor empanelment.</span>
+            </div>
+
+            </div>
+
+            <small class="b2b-sub-des text-center ">* Net Promoter Score (NPS) is a customer loyalty and satisfaction measurement based on how likely are the customers to recommend the product or service to their friend/ family on a scale of 0-10.</small>
+
+    </div>
+
+    <div class="d-flex flex-column section align-items-center section-inner-padding " id="news ">
+      <h1 class="b2b-title ">In the news</h1>
+      <div class="news-section w-100 ">
+        <div class="slide ">
+          <div class="news-slide d-flex flex-column flex-md-row justify-content-between align-items-center w-100 ">
+            <img data-src="/public/images/mint.svg " alt="image " class="news-image lazyload ">
+            <div  class="d-flex flex-column ml-0 mt-4 mt-md-0 ml-md-4 ">
+              <h4 class="b2b-title ">More testing needed to bring down positivity rate</h4>
+              <span class="b2b-des news-desc ">“We cannot lower our guard on testing. Aggressive testing and isolating are the only way to break the chain of transmission," said Dr Nagendra Swamy, Founder Chairman, Medisync Health Management Services.</span>
+                                    <br>
+                                    <a href="https://www.livemint.com/news/india/more-testing-needed-to-bring-down-positivity-rate-11594218303913.html" target="_blank" rel="noreferrer">Read more</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="news-slide d-flex flex-column flex-md-row justify-content-between align-items-center w-100">
+                            <img data-src="/public/images/VCC.svg" alt="image" class="news-image lazyload">
+                            <div class="d-flex flex-column ml-0 mt-4 mt-md-0 ml-md-4">
+                                <h4 class="b2b-title">Sequoia backs former Manipal, Amazon execs’ health-tech startup</h4>
+                                <span class="b2b-des news-desc">Sequoia Capital has invested in a healthcare startup that is building a network of neighbourhood hospitals with the help of technology</span>
+                                <br>
+                                <a href="https://www.vccircle.com/sequoia-backs-former-manipal-amazon-execs-health-tech-startup/" target="_blank" rel="noreferrer">Read more</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class="d-flex flex-column section align-items-center section-inner-padding mb-2" id="our-investor">
+      <h1 class="b2b-title">Our Investor</h1>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <img data-src="/public/images/sequoia.jpeg" alt="investor" class="lazyload investor" style="height:100%">
+        <div class="d-flex flex-column ml-0 mt-4 mt-md-0 ml-md-4">
+          <h3 class="b2b-title">Sequioa is a venture capital focused on energy,  financial, enterprise, Healthcare, internet and mobile startups.</h3>
+          <p class="b2b-des">Sequoia Capital has invested in a healthcare startup that is building a network of neighbourhood hospitals with the help of technology</p>
+        </div>
+      </div>
+    </div> -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal-enquire" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="d-flex flex-column align-items-center w-100">
+                                <h5 class="form-modal-title">Enquire Now</h5>
+                                <span class="form-modal-des">Please submit the necessary information</span>
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <div class="modal-body d-flex flex-column">
+                            <form id="enquire-contact-sumbit" onsubmit="return false;">
+                                <input name="name" type="text" required="true" class="form-control " placeholder="Name*">
+                                <input oninvalid="setCustomValidity('Please enter a valid phone number')" required="true " class="form-control" placeholder="Phone Number*" oninput="setCustomValidity('Please enter a valid phone number')" onchange="setCustomValidity('')" name="mobile_number"
+                                    type="tel" required="true" pattern="[6789][0-9]{9}">
+                                <input name="city" type="text" required="true" class="form-control " placeholder="City*">
+                                <input name="email" type="email" class="form-control " placeholder="Email">
+                                <input name="note" type="text" class="form-control " placeholder="Note">
+                                <input type="hidden" name="page-from" value="b2b">
+                                <div class="d-flex flex-row justify-content-center ">
+                                    <button id="btn-contact-sumbit" class="call-btn w-100">Submit</button>
+                                </div>
+                                <div id="submit-frm-bottom" class="alert alert-success thank_msg mx-2" role="alert">Thank you! we will connect with you shortly.</div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modal-result" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="mx-4 my-2 d-flex flex-row justify-content-end">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <div class="modal-body d-flex flex-column align-items-center">
+                            <h2 class="doc-name text-center">We have received your enquiry and will get back to you shortly. Thank you!</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <link href="/public/css/slick.css" rel="stylesheet">
+            <link href="/public/css/slick-theme.css" rel="stylesheet">
+            <script src="/public/js/basepath.js"></script>
+            <script src="/public/jquery/jquery.min.js"></script>
+            <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/public/js/custom.js"></script>
+            <script src="/public/js/slick.js"></script>
+            <script src="/public/js/lazysizes.min.js"></script>
+            <div class="footer">
+                <div class="d-flex flex-column flex-md-row justify-content-around p-3 py-lg-3 px-lg-5">
+                    <a rel="noreferrer" href="/" class="align-self-center mt-3" id="footer-home">
+            <img class="header-image" src="/public/images/logo-onwhite.png" alt="Medisync Logo">
+        </a>
+                    <span class="about_header d-block d-md-none mt-3">About Us</span>
+                    <div class="d-flex flex-row flex-md-column justify-content-md-around justify-content-between ml-0 ml-md-5 py-3 py-md-0">
+                        <span class="about_header d-none d-md-block">About Us</span>
+                        <a rel="noreferrer" class="about_des" href="/vision-mission">Vision</a>
+                        <a rel="noreferrer" class="about_des" href="/vision-mission">Mission</a>
+                        <a rel="noreferrer" class="about_des" href="/medisync-services">Services</a>
+                        <a rel="noreferrer" class="about_des" href="/medisync-credo">Credo</a>
+                        <a rel="noreferrer" class="about_des" href="/meet-our-team">Meet Our Team</a>
+                    </div>
+                    <span class="about_header d-block d-md-none mt-3">For Patients</span>
+                    <div class="d-flex flex-row flex-md-column justify-content-md-start justify-content-between py-3 py-md-0">
+                        <span class="about_header d-none d-md-block">For Patients</span>
+                        <a rel="noreferrer" class="about_des" href="/services/surgeries">Procedures</a>
+                        <a rel="noreferrer" class="about_des" href="/hospitals">Associated Hospitals</a>
+                    </div>
+                    <span class="about_header d-block d-md-none mt-3">For Hospitals</span>
+                    <div class="d-flex flex-row flex-md-column justify-content-md-start justify-content-between py-3 py-md-0">
+                        <span class="about_header d-none d-md-block">For Hospitals</span>
+                        <a rel="noreferrer" class="about_des" href="/medisync-services">Services Offered</a>
+                        <a rel="noreferrer" class="about_des" href="/success-stories">Case Studies</a>
+                        <a class="d-none" rel="noreferrer" class="about_des" href="/#form-contact">Get Affiliated</a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start mt-2 mt-md-0">
+                        <span class="about_header">Contact</span>
+                        <div class="d-flex flex-row py-3 py-md-0">
+
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg class="align-self-center mr-2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <style type="text/css">
+                        .loc{fill:#E6756B;}
+                        </style>
+                        <path id="Path_192" class="loc" d="M25.1,11.4c0,1.1-0.2,2.2-0.6,3.2l-6.5,13.8c-0.2,0.4-0.5,0.7-0.8,0.9c-0.7,0.5-1.7,0.5-2.4,0
+                        c-0.4-0.2-0.7-0.5-0.8-0.9L7.4,14.6c-0.4-1-0.6-2.1-0.6-3.2c0-5,4.1-9.1,9.1-9.1C21,2.3,25.1,6.4,25.1,11.4z M19.2,14.7
+                        c1.8-1.8,1.8-4.7,0.1-6.5c-1.8-1.8-4.7-1.8-6.5-0.1c0,0,0,0-0.1,0.1c-1.8,1.8-1.8,4.7-0.1,6.5C14.5,16.5,17.4,16.5,19.2,14.7
+                        C19.2,14.7,19.2,14.7,19.2,14.7z"/>
+                        </svg>
+                            <p class="d-none d-md-block m-0 about_des">539/51, 9th Cross Rd, 7th Block, </br>Jayanagar, Bengaluru, </br>Karnataka 560070</p>
+                            <p class="d-block d-md-none m-0 about_des">539/51, 9th Cross Rd, 7th Block, Jayanagar, Bengaluru, </br>Karnataka 560070</p>
+                        </div>
+                        <div class="">
+                            <a rel="noreferrer" href="mailto:contact@medisync.org" class="ml-1">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13.893" height="11" viewBox="0 0 13.893 11">
+                          <g id="mail" transform="translate(-1.304 -3.5)" opacity="0.91">
+                            <path id="Path_5" data-name="Path 5" d="M3.25,4h10A1.254,1.254,0,0,1,14.5,5.25v7.5A1.254,1.254,0,0,1,13.25,14h-10A1.254,1.254,0,0,1,2,12.75V5.25A1.254,1.254,0,0,1,3.25,4Z" fill="none" stroke="#E6756B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                            <path id="Path_6" data-name="Path 6" d="M14.5,6,8.25,10.375,2,6" transform="translate(0 -0.75)" fill="none" stroke="#E6756B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                          </g>
+                        </svg>
+                          <span class="m-0 pl-2 about_des">contact@medisync.org</span>
+                    </span>
+                </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="px-3">
+                    <small><p class="dis"><b>Disclaimer: </b>The website contains general information about certain health conditions, alternative treatments and preventive measures with the sole purpose to create awareness. The information provided is not intended to diagnose, treat or to replace any medical care or professional advice. Users are strongly advised to consult professional doctors for any medical advice and medical care.</p></small>
+
+                </div>
+
+                <div class="bottom d-flex flex-column flex-md-row p-3 justify-content-around">
+                    <div class="rights d-flex flex-column flex-md-row">
+                        <span class="align-self-center">All rights reserved@2023 </span>
+                        <span class="align-self-center d-none d-md-block mx-2"> &#8226; </span>
+                        <div class="align-self-md-center d-flex flex-row justify-content-around my-1 my-md-0">
+                            <a class="footer-ach" href="/privacy-policy">Privacy Policy</a>
+                            <span class="d-none d-md-block mx-2"> &#8226; </span>
+                            <a class="footer-ach" href="/terms-condition">Terms and Conditions</a>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center justify-content-between my-1 my-md-0">
+                        <span class="connect">Connect with us on :</span>
+                        <div class="mx-0 mx-md-2">
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg class="mx-2 mx-md-1 facebook" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="8.1px" height="14px" viewBox="0 0 8.1 14" style="enable-background:new 0 0 8.1 14;" xml:space="preserve">
+                    <style type="text/css">
+                    	.facebook{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;}
+                    </style>
+                    <path id="facebook" class="facebook" d="M7.6,0.5H5.7C3.9,0.5,2.4,2,2.4,3.8v2H0.5v2.6h1.9v5.2h2.6V8.3H7l0.6-2.6H5v-2
+                    	c0-0.4,0.3-0.6,0.6-0.6h1.9L7.6,0.5z"/>
+                    </svg>
+
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                            <svg class="mx-2 mr-md-1 twitter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16.9px" height="14px" viewBox="0 0 16.9 14" style="enable-background:new 0 0 16.9 14;" xml:space="preserve">
+                    <style type="text/css">
+                    	.twitter{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;}
+                    </style>
+                    <path id="twitter" class="twitter" d="M16.4,0.5C15.8,1,15,1.4,14.2,1.6C13,0.3,10.9,0.1,9.6,1.3C8.9,1.9,8.5,2.8,8.5,3.8v0.7
+                    	c-2.6,0.1-5-1.2-6.5-3.3c0,0-2.9,6.5,3.6,9.4c-1.5,1-3.3,1.5-5.1,1.5C7,15.7,15,12.1,15,3.8c0-0.2,0-0.4-0.1-0.6
+                    	C15.7,2.4,16.2,1.5,16.4,0.5z"/>
+                    </svg>
+
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg class="mx-2 mr-md-1 instagram" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+                    <style type="text/css">
+                      .instagram{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;}
+                    </style>
+                    <g id="instagram" transform="translate(0.5 0.5)">
+                      <path id="Rectangle_19" class="instagram" d="M4.3,0h4.3C11.1,0,13,1.9,13,4.3v4.3c0,2.4-1.9,4.3-4.3,4.3H4.3C1.9,13,0,11.1,0,8.7V4.3
+                        C0,1.9,1.9,0,4.3,0z"/>
+                      <path id="Path_7" class="instagram" d="M9.1,6.1c0.2,1.4-0.8,2.7-2.2,3C5.5,9.3,4.2,8.3,4,6.9c-0.2-1.4,0.8-2.7,2.2-3c0.3,0,0.5,0,0.8,0
+                        C8,4.1,8.9,5,9.1,6.1z"/>
+                      <line id="Line_9" class="instagram" x1="10.1" y1="2.9" x2="10.1" y2="2.9"/>
+                    </g>
+                    </svg>
+
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg class="mx-2 mr-md-2 linkedin" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13.9px" height="13px" viewBox="0 0 13.9 13" style="enable-background:new 0 0 13.9 13;" xml:space="preserve">
+                    <style type="text/css">
+                      .linkedin{fill:#FFFFFF;}
+                    </style>
+                    <path id="Path_210" class="linkedin" d="M1.8,0C1.3,0,0.9,0.1,0.5,0.4C0.2,0.7,0,1.1,0,1.5C0.1,2.4,0.8,3.1,1.7,3c0,0,0.1,0,0.1,0
+                      c0.5,0,0.9-0.1,1.3-0.4c0.3-0.3,0.5-0.7,0.5-1.1v0C3.5,0.6,2.7-0.1,1.8,0z M1.8,0.6C2.6,0.6,3,1,3,1.5C3,1.8,2.9,2,2.7,2.1
+                      C2.5,2.3,2.1,2.4,1.8,2.4C1,2.4,0.6,2,0.6,1.5c0-0.2,0.1-0.5,0.3-0.6C1.2,0.7,1.5,0.6,1.8,0.6L1.8,0.6z M0.3,3.6
+                      C0.1,3.6,0,3.8,0,3.9v8.8C0,12.9,0.1,13,0.3,13h3c0.2,0,0.3-0.1,0.3-0.3V3.9c0-0.2-0.1-0.3-0.3-0.3H0.3z M4.8,3.6
+                      c-0.2,0-0.3,0.1-0.3,0.3v8.8c0,0.2,0.1,0.3,0.3,0.3h3c0.2,0,0.3-0.1,0.3-0.3v-5c0-0.6,0.5-1,1.1-1c0.6,0,1,0.5,1,1v5
+                      c0,0.2,0.1,0.3,0.3,0.3h3c0.2,0,0.3-0.1,0.3-0.3V7.6c0.1-1.1-0.3-2.1-1-2.9c-0.6-0.7-1.5-1-2.4-1c-0.9,0-1.7,0.3-2.4,0.8V3.9
+                      c0-0.2-0.1-0.3-0.3-0.3H4.8z M0.6,4.2H3v8.2H0.6V4.2z M5.1,4.2h2.4V5c0,0.2,0.1,0.3,0.3,0.3c0.1,0,0.2,0,0.2-0.1
+                      c0.6-0.6,1.5-1,2.4-1c0.7,0,1.5,0.3,2,0.8c0.6,0.7,0.9,1.6,0.8,2.5v4.8h-2.4V7.7c0,0,0-0.1,0-0.1C10.8,6.7,10,6,9.1,6.1
+                      C8.2,6.1,7.6,6.8,7.6,7.7v4.7H5.1L5.1,4.2z"/>
+                    </svg>
+
+
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg class="mx-2 mx-md-0 youtube" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="13px" viewBox="0 0 14 13" style="enable-background:new 0 0 14 13;" xml:space="preserve">
+                    <style type="text/css">
+                    	.youtube{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+                    </style>
+                    <path id="Path_211" class="youtube" d="M2.8,0l1,3v2h0.7V3l1-3H4.8L4.2,2L3.5,0H2.8z M6.5,1.3c-0.3,0-0.5,0.1-0.7,0.2
+                    	C5.5,1.7,5.5,1.9,5.5,2.3V4c0,0.3,0.1,0.5,0.3,0.7C5.9,4.9,6.2,5,6.5,5C6.8,5,7,4.9,7.2,4.7C7.4,4.5,7.5,4.3,7.5,4V2.3
+                    	c0.1-0.5-0.3-0.9-0.7-1C6.7,1.3,6.6,1.3,6.5,1.3L6.5,1.3z M8.1,1.3v3C8.2,4.7,8.5,5,8.8,5c0.3,0,0.5-0.1,0.7-0.3V5h0.7V1.3H9.5V4
+                    	c0,0.2-0.3,0.3-0.3,0.3C9,4.3,8.8,4.2,8.8,4c0,0,0,0,0-0.1V1.3H8.1z M6.5,2c0.1,0,0.3,0,0.3,0.3V4c0,0.3-0.2,0.3-0.3,0.3
+                    	S6.2,4.3,6.2,4V2.3C6.2,2.1,6.3,2,6.5,2z M7,5.6c-1.7,0-3.4,0-5,0c-0.2,0-0.5,0-0.7,0.1C1.1,5.8,0.9,5.9,0.8,6
+                    	C0.6,6.1,0.5,6.3,0.3,6.5C0.3,6.6,0.2,6.7,0.1,6.9C0.1,7.1,0,7.3,0,7.6c0,1.1,0,2.2,0,3.3c0,0.2,0,0.4,0.1,0.6
+                    	c0.1,0.4,0.3,0.7,0.6,1c0.1,0.1,0.2,0.1,0.3,0.2c0.1,0.1,0.2,0.1,0.4,0.2C1.5,12.9,1.8,13,2,13C5.3,13,8.7,13,12,13
+                    	c0.2,0,0.5,0,0.7-0.1c0.2-0.1,0.3-0.1,0.5-0.2c0.2-0.1,0.3-0.3,0.5-0.5c0.1-0.1,0.1-0.3,0.2-0.4c0.1-0.2,0.1-0.5,0.1-0.7
+                    	c0-1.1,0-2.3,0-3.4c0-0.2,0-0.5-0.1-0.7c0-0.1-0.1-0.3-0.2-0.4c-0.1-0.2-0.3-0.3-0.4-0.5c-0.2-0.1-0.3-0.2-0.5-0.3
+                    	c-0.2-0.1-0.5-0.1-0.7-0.1C10.3,5.6,8.6,5.6,7,5.6L7,5.6z M9.5,6.3c0.8,0,1.7,0,2.5,0c0.1,0,0.3,0,0.4,0.1c0.2,0.1,0.4,0.2,0.5,0.3
+                    	C13,6.7,13,6.8,13.1,6.8c0.1,0.1,0.1,0.2,0.1,0.3c0,0.2,0.1,0.3,0.1,0.5c0,1.1,0,2.3,0,3.4c0,0.2,0,0.3-0.1,0.5
+                    	c0,0.1-0.1,0.2-0.1,0.3c0,0.1-0.1,0.1-0.1,0.2c-0.2,0.2-0.3,0.3-0.5,0.3c-0.1,0-0.3,0-0.4,0.1c-3.3,0.1-6.7,0-10,0
+                    	c-0.1,0-0.3,0-0.4-0.1c-0.1,0-0.2-0.1-0.2-0.1c-0.1,0-0.1-0.1-0.2-0.1c-0.2-0.2-0.3-0.4-0.4-0.7c0-0.1-0.1-0.3-0.1-0.4
+                    	c0-1.1,0-2.1,0-3.2c0-0.2,0-0.3,0.1-0.5c0-0.1,0.1-0.2,0.1-0.3C0.9,6.8,1,6.7,1,6.7c0.2-0.2,0.4-0.3,0.6-0.3c0.1,0,0.3,0,0.4,0
+                    	C4.5,6.3,7,6.3,9.5,6.3z M2.2,7v0.7h0.7v4h0.7v-4h0.7V7H2.2z M7.2,7v4.7h0.7v-0.3c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.4-0.1,0.5-0.3
+                    	c0.1-0.1,0.2-0.3,0.2-0.5v-2c0-0.2-0.1-0.4-0.2-0.6C8.8,8,8.6,7.9,8.4,8C8.3,8,8.2,8,8.1,8C8,8.1,7.9,8.2,7.8,8.3V7L7.2,7z M4.5,8v3
+                    	c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0,0.3,0,0.4-0.1c0.1-0.1,0.2-0.1,0.3-0.3v0.3h0.7V8H5.8v2.7
+                    	C5.8,10.7,5.8,11,5.5,11c-0.2,0-0.3-0.2-0.3-0.3V8H4.5z M10.5,8C10.3,8,10,8,9.8,8.2C9.6,8.4,9.5,8.7,9.5,8.9v1.6
+                    	c0,0.3,0.1,0.6,0.3,0.8c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.6-0.1,0.8-0.3c0.2-0.2,0.2-0.5,0.2-0.8v-0.2h-0.7v0.2c0,0.1,0,0.3-0.1,0.4
+                    	c-0.1,0.1-0.2,0.1-0.3,0.1c-0.1,0-0.2,0-0.3-0.1c-0.1-0.1-0.1-0.2-0.1-0.4V10h1.3v-1c0-0.3-0.1-0.5-0.2-0.7C11.1,8,10.8,7.9,10.5,8
+                    	L10.5,8z M8.1,8.5c0.2,0,0.3,0.2,0.3,0.5v1.7c0,0.2-0.1,0.3-0.3,0.3c0,0,0,0,0,0c-0.2,0-0.3-0.1-0.3-0.2v-2C7.8,8.6,8,8.5,8.1,8.5
+                    	L8.1,8.5z M10.5,8.6c0.2,0,0.3,0.1,0.3,0.3c0,0,0,0,0,0v0.3h-0.7V9C10.1,8.8,10.3,8.6,10.5,8.6L10.5,8.6z"/>
+                    </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="location-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="location-modal-title">Select your location</h5>
+                    <span class="location-des">Select location to see doctors near you</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body d-flex flex-column">
+                <span class="location-pincode">Enter a pincode</span>
+                <input name="location-pincode" type="text" required="true" class="form-control my-2" maxlength="6" placeholder="Enter Pincode" id="location-pincode">
+                <button type="button" class="back-blue py-2 mt-2" name="button" id="submit-location-pincode">Apply
+        <span id="location-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="float:right"></span>
+      </button>
+                <div class="alert alert-danger" role="alert" id="location-error">
+                    Enter valid location
+                </div>
+                <span class="location-pick">Pick current location</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="form-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column align-items-center w-100">
+                    <h5 class="form-modal-title">Select your location</h5>
+                    <span class="form-modal-des">Call Us Now</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body d-flex flex-column">
+                <form id="form_modal-crm">
+                    <input type="hidden" name="landing_page" value="Exit Form">
+                    <input type="hidden" name="req_url" value="">
+                    <input type="hidden" name="city" value="">
+                    <input type="hidden" name="sub_category" value="specialty">
+                    <input type="hidden" name="category" value="Consultation ">
+                    <input type="hidden" name="source" value="">
+                    <input type="hidden" name="medium" value="">
+                    <input type="hidden" name="campaign" value="">
+                    <input type="hidden" name="search_query" value="">
+                    <input type="hidden" name="pincode" value="">
+                    <input type="hidden" id="priority" name="priority" value="">
+                    <input type="hidden" id="channel" name="channel" value="Form">
+                    <input name="name" type="text" required="true" class="form-control my-2" placeholder="Name*">
+                    <div class="input-group my-1">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">+91</div>
+                        </div>
+                        <input oninvalid="setCustomValidity('Please enter a valid phone number')" class="form-control" placeholder="Phone Number*" oninput="setCustomValidity('Please enter a valid phone number')" onchange="setCustomValidity('')" name="phone" type="tel" required="true"
+                            pattern="[6789][0-9]{9}">
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-center my-1">
+                        <button id="frm-submit-bottom" class="call-btn mt-2 w-100">Submit</button>
+                    </div>
+                    <div id="submit-frm-bottom" class="alert alert-success thank_msg my-2" role="alert">Thank you! we will connect with you shortly.</div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-select" tabindex="-1" aria-labelledby="select-profession" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="mx-3 mt-3">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body d-flex flex-column">
+                <h2 class="title-header pb-3 text-center" style="color: #0A2B6F">I am a</h2>
+                <div class="d-flex flex-row justify-content-between justify-content-md-around">
+                    <div class="select-modal" id='hospital'>
+                        <img data-src="/public/svg/hosp-owners.svg" alt="image" class="lazyload">
+                        <span>Hospital owner</span>
+                    </div>
+                    <div class="select-modal" id='patient'>
+                        <img data-src="/public/svg/patient.svg" alt="image" class="lazyload">
+                        <span>Patient / Caregiver</span>
+                    </div>
+                    <div class="select-modal" id='doctor'>
+                        <img data-src="/public/svg/doctor.svg" alt="image" class="lazyload">
+                        <span>Doctor</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</html>
+</div>
+<script src="/public/js/forHospital.js"></script>
